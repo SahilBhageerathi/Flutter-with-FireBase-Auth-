@@ -39,6 +39,7 @@ class _HomeScreen extends State<HomeScreen> {
         ));
   }
 
+
   void logOut() async {
     await FirebaseAuth.instance.signOut();
     Navigator.popUntil(context, (route) => route.isFirst);
