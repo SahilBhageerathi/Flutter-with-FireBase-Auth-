@@ -30,9 +30,10 @@ class _VerifyOtp extends State<VerifyOtp> {
           child: Column(
             children: [
               const  SizedBox(height: 10,),
-              const TextField(
+              TextField(
+                controller: otpController,
                 maxLength: 6,
-                decoration: InputDecoration(labelText: "Enter OTP"),
+                decoration:const InputDecoration(labelText: "Enter OTP"),
               ),
               const SizedBox(height: 10,),
               CupertinoButton(
