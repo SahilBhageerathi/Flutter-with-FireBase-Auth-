@@ -1,17 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:sample_1/screens/login_screen.dart';
+import 'package:sample_1/screens/phone_auth/login_screen_mobile.dart';
 
-class HomeScreen extends StatefulWidget {
+
+class HomeScreenForMobile extends StatefulWidget {
   final User user;
 
- const HomeScreen({super.key, required this.user});
+  const HomeScreenForMobile({super.key, required this.user});
 
   @override
-  State<HomeScreen> createState() => _HomeScreen();
+  State<HomeScreenForMobile> createState() => _HomeScreen();
 }
 
-class _HomeScreen extends State<HomeScreen> {
+class _HomeScreen extends State<HomeScreenForMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,7 @@ class _HomeScreen extends State<HomeScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  logOut();
+                  logOut(context);
                 },
                 icon: const Icon(
                   Icons.exit_to_app,
@@ -32,7 +33,7 @@ class _HomeScreen extends State<HomeScreen> {
           padding: const EdgeInsets.all(10.0),
           child: Center(
             child: Text(
-              "${widget.user.email}\nis logged in",
+              "${widget.user.phoneNumber}\nis logged in",
               style: const TextStyle(fontSize: 20, color: Colors.green),
             ),
           ),
@@ -40,9 +41,9 @@ class _HomeScreen extends State<HomeScreen> {
   }
 
 
-  void logOut() async {
+  void logOut(context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.popUntil(context, (route) => route.isFirst);
-    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=> const LoginScreen()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=> const LoginScreenWithMobile()));
   }
 }
