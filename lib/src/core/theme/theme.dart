@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/app_bar_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/bottom_sheet_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/check_box_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/chip_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/elevated_btn_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/outline_btn_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/text_form_field_theme.dart';
-import 'package:sample_1/src/utils/theme/custom_themes/text_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sample_1/src/core/theme/custom_themes/app_bar_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/bottom_sheet_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/check_box_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/chip_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/elevated_btn_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/outline_btn_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/text_form_field_theme.dart';
+import 'package:sample_1/src/core/theme/custom_themes/text_theme.dart';
+
 
 class CustomAppTheme {
   CustomAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
+    fontFamily: GoogleFonts.poppins().fontFamily,
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
     primaryColor: Colors.blue,
@@ -28,6 +31,7 @@ class CustomAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
+    fontFamily: GoogleFonts.poppins().fontFamily,
     brightness: Brightness.dark,
     primaryColor: Colors.blue,
     textTheme: CustomTextTheme.darkTextTheme,

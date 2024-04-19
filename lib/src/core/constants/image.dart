@@ -5,7 +5,7 @@ class AppImages{
   static const String _svgImages="assets/images/svg";
   //App Logos
   static const String darkAppLogo='$_svgImages/';
-  static const String lightAppLogo='$_svgImages/';
+  static const String lightAppLogo='$_pngImages/app_name.png';
 
   //Social logos
   static const String facebook="";

@@ -3,18 +3,37 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sample_1/app.dart';
 import 'package:sample_1/firebase_options.dart';
+import 'package:sample_1/screens/auto_routing/router/routes.dart';
+import 'package:sample_1/screens/auto_routing/temp_screens/route_screen_1.dart';
 import 'package:sample_1/screens/email_auth/login_screen.dart';
 import 'package:sample_1/screens/phone_auth/home.dart';
 import 'package:sample_1/screens/phone_auth/login_screen_mobile.dart';
-import 'package:sample_1/src/utils/theme/theme.dart';
+
 
 void main()  {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp(
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
-  runApp(const App());
+  runApp( App());
+  // runApp(Test());
 }
+
+// class Test extends StatelessWidget {
+//    Test({super.key});
+//
+//   final _appRoute=AppRouter();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp.router(
+//       title: 'Testing new Concepts',
+//       // home: RouteScreen1(),
+//       routerConfig: _appRoute.config(),
+//     );
+//   }
+// }
+
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
