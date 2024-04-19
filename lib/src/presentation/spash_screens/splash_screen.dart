@@ -19,19 +19,21 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     moveToOnboard();
-    
   }
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight=MediaQuery.of(context).size.height;
+    double screenWidth=MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: Center(
         child: FadedScaleAnimation(
           fadeDuration: const Duration(seconds: 2),
-          child: Image.asset(AppImages.lightAppLogo,
-          height: 42,
-            width: 139,
+          child: Image.asset(AppImages.appLogo,
+          height: screenHeight*0.05,
+            width: screenWidth*0.36,
           ),
         ),
       ),
