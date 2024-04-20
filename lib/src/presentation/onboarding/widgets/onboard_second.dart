@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample_1/src/core/constants/app_strings.dart';
 import 'package:sample_1/src/core/constants/image.dart';
 
@@ -12,15 +13,16 @@ class OnBoardSecond extends StatelessWidget {
       children: [
         Image.asset(
           AppImages.onBoarding_2,
-          height: screenHeight * 0.4,
+          height: 333.h,
+          width: 333.w,
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 50.h,
         ),
-        const Text(
+        Text(
           AppStrings.onBoardingTxt2,
           style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
               color: Colors.black),
           textAlign: TextAlign.center,
