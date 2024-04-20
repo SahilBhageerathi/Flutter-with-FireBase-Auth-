@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample_1/src/core/constants/app_strings.dart';
 import 'package:sample_1/src/core/constants/colors.dart';
 import 'package:sample_1/src/core/constants/image.dart';
-import 'package:sample_1/src/presentation/onboarding/onboarding_view_model.dart';
-import 'package:sample_1/src/presentation/onboarding/widgets/onboard_first.dart';
-import 'package:sample_1/src/presentation/onboarding/widgets/onboard_second.dart';
-import 'package:sample_1/src/presentation/onboarding/widgets/onboard_third.dart';
+import 'package:sample_1/src/presentation/screens/onboarding/onboarding_view_model.dart';
+import 'package:sample_1/src/presentation/screens/onboarding/widgets/onboard_first.dart';
+import 'package:sample_1/src/presentation/screens/onboarding/widgets/onboard_second.dart';
+import 'package:sample_1/src/presentation/screens/onboarding/widgets/onboard_third.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 @RoutePage()
