@@ -60,7 +60,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               child: PrimaryButton(
                 title: AppStrings.getStartedBtnTxt,
                 onPressed: () {
-                  print("clicked on get started btn");
                   AutoRouter.of(context).push(const AuthPageRoute());
                 },
               ),

@@ -9,16 +9,17 @@ import 'package:sample_1/src/presentation/common_widgets/primary_button.dart';
 import 'package:sample_1/src/presentation/routing/router.gr.dart';
 
 @RoutePage()
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -41,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 100.h,
                 ),
                 Container(
-                  height: MediaQuery.sizeOf(context).height,
+                  height: MediaQuery.sizeOf(context).height*0.85,
                   width: MediaQuery.sizeOf(context).width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -55,11 +56,11 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 50.h,
+                          height: 30.h,
                         ),
                         const Center(
                           child: Text(
-                            AppStrings.loginText,
+                            AppStrings.registerText,
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
@@ -72,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                         const Text(
                           "Email",
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
                               color: AppColors.primaryColor),
                         ),
@@ -83,6 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                           controller: emailController,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
+                            hintText: "sahil12@gmail.com",
+                            hintStyle:const TextStyle(
+                              color: Colors.grey
+                            ),
                             prefixIcon: const Icon(Icons.mail_outline_rounded),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.r),
@@ -105,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                         const Text(
                           "Password",
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
                               color: AppColors.primaryColor),
                         ),
@@ -142,6 +147,37 @@ class _LoginPageState extends State<LoginPage> {
                                       color: Colors.grey,
                                     ),
                                 ),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.r),
+                                borderSide: const BorderSide(color: Colors.grey)),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.r),
+                                borderSide: const BorderSide(
+                                    color: AppColors.primaryColor)),
+                            errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.r),
+                                borderSide: const BorderSide(color: Colors.red)),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        const Text(
+                          "Confirm Password",
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.primaryColor),
+                        ),
+                        SizedBox(
+                          height: 8.h,
+                        ),
+                        TextField(
+                          controller: confirmPasswordController,
+                          style: const TextStyle(color: Colors.black),
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.lock),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.r),
                                 borderSide: const BorderSide(color: Colors.grey)),
@@ -207,20 +243,20 @@ class _LoginPageState extends State<LoginPage> {
                           text: TextSpan(
                             children: [
                               const TextSpan(
-                                text: "Don't have an Account?",
+                                text: "Already have an Account?",
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300,
                                     color: AppColors.primaryColor),
                               ),
                                TextSpan(
-                                text: "Sign Up",
+                                text: "Log In",
                                 style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.primaryColor),
                                  recognizer: TapGestureRecognizer()..onTap=(){
-                                   AutoRouter.of(context).replace(const RegisterPageRoute());
+                                  AutoRouter.of(context).replace(const LoginPageRoute());
                                  },)
                             ]
                           ),

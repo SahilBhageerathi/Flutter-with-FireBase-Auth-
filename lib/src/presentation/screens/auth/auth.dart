@@ -61,7 +61,9 @@ class _AuthPageState extends State<AuthPage> {
                 child: SizedBox(
                   width: 350.w,
                   child:OutlineButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      AutoRouter.of(context).push(const RegisterPageRoute());
+                    },
                     title: AppStrings.registerText,
                   ),
                 ),

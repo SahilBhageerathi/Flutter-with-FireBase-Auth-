@@ -20,8 +20,8 @@ class App extends StatelessWidget {
       builder: (context,child) {
         return MaterialApp.router(
           title: AppStrings.appName,
-          themeMode: ThemeMode.system,
-          theme:CustomAppTheme.lightTheme ,
+          // themeMode: ThemeMode.system,
+          // theme:CustomAppTheme.lightTheme ,
           darkTheme: CustomAppTheme.darkTheme,
           routerConfig: _appRoute.config(),
         );
