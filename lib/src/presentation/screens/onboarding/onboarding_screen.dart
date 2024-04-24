@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample_1/src/core/constants/app_strings.dart';
 import 'package:sample_1/src/core/constants/colors.dart';
 import 'package:sample_1/src/core/constants/image.dart';
+import 'package:sample_1/src/presentation/common_widgets/primary_button.dart';
+import 'package:sample_1/src/presentation/routing/router.gr.dart';
 import 'package:sample_1/src/presentation/screens/onboarding/onboarding_view_model.dart';
 import 'package:sample_1/src/presentation/screens/onboarding/widgets/onboard_first.dart';
 import 'package:sample_1/src/presentation/screens/onboarding/widgets/onboard_second.dart';
@@ -27,80 +29,78 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       backgroundColor: Colors.white,
       body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  AppImages.appLogo,
-                  color: AppColors.primaryColor,
-                  height: 42.h,
-                  width: 139.w,
-                ),
-                SizedBox(
-                  height: 63.h,
-                ),
-                Expanded(
-                  child: PageView(
-                    controller: onBoardViewModel.onBoardingPageController,
-                    children: const [
-                      OnBoardFirst(),
-                      OnBoardSecond(),
-                      OnBoardThird(),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 61.h,
-                ),
-                SizedBox(
-                  width:350.w,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primaryColor,
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      AppStrings.getStartedBtnTxt,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 61.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      AppStrings.skipTxt,
-                      style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16.sp),
-                    ),
-                    SmoothPageIndicator(
-                        controller: onBoardViewModel.onBoardingPageController,
-                        // PageController
-                        count: 3,
-                        effect: const WormEffect(
-                          activeDotColor: AppColors.primaryColor,
-                          dotHeight: 12,
-                          dotWidth: 12,
-                        ),
-                        // your preferred effect
-                        onDotClicked: (index) {}),
-                    Text(
-                      AppStrings.nextTxt,
-                      style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16.sp),
-                    ),
-                  ],
-                )
-              ],
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              AppImages.appLogo,
+              color: AppColors.primaryColor,
+              height: 42.h,
+              width: 139.w,
             ),
-          )),
+            SizedBox(
+              height: 63.h,
+            ),
+            Expanded(
+              child: PageView(
+                controller: onBoardViewModel.onBoardingPageController,
+                children: const [
+                  OnBoardFirst(),
+                  OnBoardSecond(),
+                  OnBoardThird(),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 61.h,
+            ),
+            SizedBox(
+              width: 350.w,
+              child: PrimaryButton(
+                title: AppStrings.getStartedBtnTxt,
+                onPressed: () {
+                  print("clicked on get started btn");
+                  AutoRouter.of(context).push(const AuthPageRoute());
+                },
+              ),
+            ),
+            SizedBox(
+              height: 61.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  AppStrings.skipTxt,
+                  style: TextStyle(
+                      color: AppColors.primaryColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16.sp),
+                ),
+                SmoothPageIndicator(
+                    controller: onBoardViewModel.onBoardingPageController,
+                    // PageController
+                    count: 3,
+                    effect: const WormEffect(
+                      activeDotColor: AppColors.primaryColor,
+                      dotHeight: 12,
+                      dotWidth: 12,
+                    ),
+                    // your preferred effect
+                    onDotClicked: (index) {}),
+                Text(
+                  AppStrings.nextTxt,
+                  style: TextStyle(
+                      color: AppColors.primaryColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16.sp),
+                ),
+              ],
+            )
+          ],
+        ),
+      )),
     );
   }
 }
