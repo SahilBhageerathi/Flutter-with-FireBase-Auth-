@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample_1/src/core/constants/app_strings.dart';
 import 'package:sample_1/src/core/constants/image.dart';
 
-class OnBoardThird extends StatelessWidget {
-  const OnBoardThird({super.key});
+class OnBoardSecond extends StatelessWidget {
+  const OnBoardSecond({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +12,17 @@ class OnBoardThird extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
-          AppImages.onBoarding_3,
-          height: screenHeight * 0.4,
+          AppImages.onBoarding_2,
+          height: 333.h,
+          width: 333.w,
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 50.h,
         ),
-        const Text(
-          AppStrings.onBoardingTxt3,
+        Text(
+          AppStrings.onBoardingTxt2,
           style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
               color: Colors.black),
           textAlign: TextAlign.center,
