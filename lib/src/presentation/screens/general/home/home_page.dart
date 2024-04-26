@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample_1/src/core/constants/colors.dart';
 import 'package:sample_1/src/core/constants/image.dart';
 
-@RoutePage()
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
