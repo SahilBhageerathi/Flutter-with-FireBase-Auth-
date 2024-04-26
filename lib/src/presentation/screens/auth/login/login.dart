@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50.h,
                         ),
                         const Text(
-                          "Email",
+                          AppStrings.emailText,
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
@@ -90,8 +90,8 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.r),
-                              borderSide:
-                                  const BorderSide(color: AppColors.primaryColor),
+                              borderSide: const BorderSide(
+                                  color: AppColors.primaryColor),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.r),
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 20.h,
                         ),
                         const Text(
-                          "Password",
+                          AppStrings.passwordText,
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
@@ -120,41 +120,44 @@ class _LoginPageState extends State<LoginPage> {
                             prefixIcon: const Icon(Icons.lock),
                             suffixIcon: _obscureText
                                 ? IconButton(
-                              onPressed: (){
-                                setState(() {
-                                  _obscureText=false;
-                                });
-                              },
-                              icon:const Icon(
+                                    onPressed: () {
+                                      setState(() {
+                                        _obscureText = false;
+                                      });
+                                    },
+                                    icon: const Icon(
                                       Icons.visibility,
                                       color: Colors.grey,
                                     ),
-                                )
-                                :IconButton(
-                              onPressed: (){
-                                setState(() {
-                                  _obscureText=true;
-                                });
-        
-                              },
-                                  icon: const  Icon(
+                                  )
+                                : IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        _obscureText = true;
+                                      });
+                                    },
+                                    icon: const Icon(
                                       Icons.visibility_off,
                                       color: Colors.grey,
                                     ),
-                                ),
+                                  ),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.r),
-                                borderSide: const BorderSide(color: Colors.grey)),
+                                borderSide:
+                                    const BorderSide(color: Colors.grey)),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.r),
                                 borderSide: const BorderSide(
                                     color: AppColors.primaryColor)),
                             errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.r),
-                                borderSide: const BorderSide(color: Colors.red)),
+                                borderSide:
+                                    const BorderSide(color: Colors.red)),
                           ),
                         ),
-                        SizedBox(height: 20.h,),
+                        SizedBox(
+                          height: 20.h,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -171,24 +174,23 @@ class _LoginPageState extends State<LoginPage> {
                                   checkColor: Colors.white,
                                   side: const BorderSide(
                                     width: 2.0, // Change border width here
-                                    color: AppColors.primaryColor, // Change border color here
+                                    color: AppColors
+                                        .primaryColor, // Change border color here
                                   ),
                                 ),
                                 const Text(
-                                  "Remember Me",
+                                  AppStrings.rememberMeText,
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
                                       color: AppColors.primaryColor),
                                 ),
-        
                               ],
                             ),
                             InkWell(
-                              onTap: (){
-                              },
+                              onTap: () {},
                               child: const Text(
-                                "Forgot Password",
+                                AppStrings.forgotPasswordText,
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
@@ -197,33 +199,39 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 50.h,),
                         SizedBox(
-                            width:350.w,
-                            child: PrimaryButton(title: AppStrings.loginText, onPressed: (){})),
-                        SizedBox(height: 20.h,),
+                          height: 50.h,
+                        ),
+                        SizedBox(
+                            width: 350.w,
+                            child: PrimaryButton(
+                                title: AppStrings.loginText, onPressed: () {})),
+                        SizedBox(
+                          height: 20.h,
+                        ),
                         Center(
                           child: RichText(
-                          text: TextSpan(
-                            children: [
+                            text: TextSpan(children: [
                               const TextSpan(
-                                text: "Don't have an Account?",
+                                text: AppStrings.dontHaveAccountText,
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300,
                                     color: AppColors.primaryColor),
                               ),
-                               TextSpan(
-                                text: "Sign Up",
+                              TextSpan(
+                                text: AppStrings.signUpText,
                                 style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.primaryColor),
-                                 recognizer: TapGestureRecognizer()..onTap=(){
-                                   AutoRouter.of(context).replace(const RegisterPageRoute());
-                                 },)
-                            ]
-                          ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    AutoRouter.of(context)
+                                        .replace(const RegisterPageRoute());
+                                  },
+                              )
+                            ]),
                           ),
                         ),
                       ],

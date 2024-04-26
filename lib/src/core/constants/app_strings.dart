@@ -14,4 +14,13 @@ class AppStrings {
   static const String authText ="Explore the world,\nBillions of categories.";
   static const String loginText ="Login";
   static const String registerText ="Register";
+  static const String emailText ="Email";
+  static const String emailHintText ="sahil12@gmail.com";
+  static const String passwordText ="Password";
+  static const String confirmPasswordText ="Confirm Password";
+  static const String rememberMeText ="Remember Me";
+  static const String forgotPasswordText ="Forgot Password";
+  static const String dontHaveAccountText ="Don't have an Account?";
+  static const String alreadyHaveAccountText ="Already have an Account?";
+  static const String signUpText ="Sign Up";
 }

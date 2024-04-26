@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 50.h,
                         ),
                         const Text(
-                          "Email",
+                          AppStrings.emailText,
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
@@ -84,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           controller: emailController,
                           style: const TextStyle(color: Colors.black),
                           decoration: InputDecoration(
-                            hintText: "sahil12@gmail.com",
+                            hintText: AppStrings.emailHintText,
                             hintStyle:const TextStyle(
                               color: Colors.grey
                             ),
@@ -108,7 +108,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 20.h,
                         ),
                         const Text(
-                          "Password",
+                          AppStrings.passwordText,
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
@@ -163,7 +163,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 20.h,
                         ),
                         const Text(
-                          "Confirm Password",
+                          AppStrings.confirmPasswordText,
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
@@ -211,7 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                 ),
                                 const Text(
-                                  "Remember Me",
+                                  AppStrings.rememberMeText,
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
@@ -224,7 +224,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               onTap: (){
                               },
                               child: const Text(
-                                "Forgot Password",
+                                AppStrings.forgotPasswordText,
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
@@ -243,14 +243,14 @@ class _RegisterPageState extends State<RegisterPage> {
                           text: TextSpan(
                             children: [
                               const TextSpan(
-                                text: "Already have an Account?",
+                                text: AppStrings.alreadyHaveAccountText,
                                 style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300,
                                     color: AppColors.primaryColor),
                               ),
                                TextSpan(
-                                text: "Log In",
+                                text: AppStrings.loginText,
                                 style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w700,
