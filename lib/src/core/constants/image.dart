@@ -14,8 +14,11 @@ class AppImages{
   ///Auth
   static const String authBg='$_pngImages/auth_bg.png';
 
-
   //Social logos
   static const String facebook="";
   static const String google="";
+
+  //Home Page
+static const netflixBanner="$_pngImages/netflix_banner.png";
+static const netflixBanner1="$_pngImages/netflix_banner1.webp";
 }
