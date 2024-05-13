@@ -41,7 +41,7 @@ class ApiClient {
     );
 
     try {
-      var response = await dio.get(
+      var response = await dio.post(
         path,
         data: body,
         options: options,

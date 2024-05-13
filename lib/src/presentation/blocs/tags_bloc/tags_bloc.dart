@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sample_1/src/data/models/tags.dart';
 import 'package:sample_1/src/data/repositories/Repository.dart';
+import 'package:sample_1/src/data/repositories/auth_repo.dart';
 import 'package:sample_1/src/data/repositories/tags_repo.dart';
 import 'package:sample_1/src/presentation/blocs/tags_bloc/tags_event.dart';
 import 'package:sample_1/src/presentation/blocs/tags_bloc/tags_state.dart';
@@ -18,7 +19,7 @@ class TagsBloc extends Bloc<TagsEvent, TagsState> {
   Repository? _repository;
 
   TagsBloc._() : super(TagsState()) {
-    _repository=Repository(tagsRepo: TagsRepo());
+    _repository=Repository(tagsRepo: TagsRepo(),authRepo: AuthRepo());
     on<InitializeTagsEvent>(initialize);
   }
 
