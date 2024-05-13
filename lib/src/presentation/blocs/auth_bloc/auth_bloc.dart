@@ -31,13 +31,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     LoginResponse loginDetails =
         await _repository!.authRepo.login(event.email, event.password);
     await SharedPreferenceData.setToken(loginDetails.accessToken);
-    print("userlogged in is:${state.isUserLoggedIn}");
 
     emit(state.copyWith(
       isLoading: false,
       isUserLoggedIn: true,
     ));
 
-    print("userlogged after emit:${state.isUserLoggedIn}");
   }
 }

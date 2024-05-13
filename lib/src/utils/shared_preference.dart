@@ -5,6 +5,10 @@ class SharedPreferenceData{
     final sharedPreferences=await SharedPreferences.getInstance();
     await sharedPreferences.setString(PreferenceKeys.loginToken, token);
   }
+  static Future<String> getToken()async {
+    final sharedPreferences=await SharedPreferences.getInstance();
+    return sharedPreferences.getString(PreferenceKeys.loginToken)??"";
+  }
 }
 
 class PreferenceKeys{

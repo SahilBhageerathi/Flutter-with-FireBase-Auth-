@@ -36,7 +36,7 @@ class _GeneralPageState extends State<GeneralPage> {
       icon: FeatherIcons.user,
     ),
   ];
-  int visit = 2;
+  int visit = 0;
   List<Widget> pages=const [
     HomePage(),
     CategoriesPage(),

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample_1/src/core/constants/colors.dart';
 import 'package:sample_1/src/core/constants/image.dart';
 import 'package:sample_1/src/presentation/routing/router.gr.dart';
+import 'package:sample_1/src/utils/shared_preference.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -39,8 +40,15 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   moveToOnboard() async {
-    await Future.delayed(const Duration(seconds: 4), () {
-      AutoRouter.of(context).push(const OnBoardingScreenRoute());
+    await Future.delayed(const Duration(seconds: 4), ()async {
+      String token=await SharedPreferenceData.getToken();
+      if(token.isEmpty){
+        AutoRouter.of(context).push(const OnBoardingScreenRoute());
+      }
+      else{
+        AutoRouter.of(context).push(const GeneralPageRoute());
+      }
+
     });
   }
 }
