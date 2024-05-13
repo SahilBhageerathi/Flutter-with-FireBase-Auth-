@@ -33,12 +33,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocBuilder<AuthBloc, AuthState>(
         bloc: AuthBloc.instance,
         builder: (context, state) {
-          if(state.isUserLoggedIn) {
-            AutoRouter.of(context).push(
-                const GeneralPageRoute());
-          }
-
-          return Scaffold(
+         return Scaffold(
             body: FadedScaleAnimation(
               fadeDuration: const Duration(seconds: 2),
               fadeCurve: Curves.ease,
@@ -260,6 +255,9 @@ class _LoginPageState extends State<LoginPage> {
                                               AuthBloc.instance.add(LoginEvent(
                                                 email: emailController.text,
                                                 password: passwordController.text,
+                                                navigateCallback: (){
+                                                  AutoRouter.of(context).push(const GeneralPageRoute());
+                                                }
                                               ));
                                             }
                                           })),

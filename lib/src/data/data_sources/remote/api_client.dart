@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:sample_1/src/data/data_sources/remote/api_constants.dart';
 import 'package:sample_1/src/data/data_sources/remote/api_exception.dart';
+import 'package:sample_1/src/utils/shared_preference.dart';
 
 class ApiClient {
   late Dio dio;
@@ -28,15 +29,15 @@ class ApiClient {
   }
 
   ///POST REQUEST
-  Future<Response> postRequest({required String path, required dynamic body}) async {
+  Future<Response> postRequest({required String path,  dynamic body}) async {
     // Map body = {
     //   "title": "title-1",
     //   "slug": "slug-1",
     // };
-
+   String token=await SharedPreferenceData.getToken();
     final options = Options(
       headers: {
-        "Authorization": "Bearer 101|someRandomToken",
+        "Authorization": "Bearer $token",
       },
     );
 

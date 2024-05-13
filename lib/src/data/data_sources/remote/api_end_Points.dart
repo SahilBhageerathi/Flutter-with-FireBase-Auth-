@@ -6,5 +6,6 @@ class ApiEndPoints{
   static const String POSTS="posts";
   static const String CATEGORIES="categories";
   static const String LOGIN="login";
+  static const String LOGOUT="logout";
 
 }

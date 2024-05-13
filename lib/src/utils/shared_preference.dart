@@ -9,6 +9,10 @@ class SharedPreferenceData{
     final sharedPreferences=await SharedPreferences.getInstance();
     return sharedPreferences.getString(PreferenceKeys.loginToken)??"";
   }
+  static Future<void> clearAllData()async {
+    final sharedPreferences=await SharedPreferences.getInstance();
+    sharedPreferences.clear();
+  }
 }
 
 class PreferenceKeys{
